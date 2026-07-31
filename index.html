@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUROPAVITALIA SARL | Revêtements de Sol Industriels & Décoratifs</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="DUROPAVITALIA SARL : Expert en revêtements de sol industriels, béton décoratif, résine époxy et étanchéité à Casablanca, Maroc.">
+    <meta name="keywords" content="DUROPAVITALIA, sol industriel, béton imprimé, résine époxy, étanchéité, Casablanca, Maroc, construction">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#e6f0ff',
+                            DEFAULT: '#0f52ba',
+                            dark: '#002366',
+                            accent: '#4db8ff'
+                        },
+                        neutral: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        arabic: ['Cairo', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to right bottom, rgba(15, 82, 186, 0.9), rgba(0, 35, 102, 0.9)), url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1920&auto=format&fit=crop')",
+                        'contact-pattern': "linear-gradient(to right, rgba(255,255,255,0.95), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1920&auto=format&fit=crop')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="lang-fr text-gray-800 antialiased bg-neutral-50 relative">
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="flex flex-col items-center">
+            <div class="text-brand font-bold text-2xl mb-4 tracking-wider">DUROPAVITALIA</div>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="bg-brand-dark text-white text-xs py-2 hidden md:block">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex space-x-6">
+                <span class="flex items-center"><i class="fas fa-envelope mr-2"></i> duropavitalia@hotmail.fr</span>
+                <span class="flex items-center"><i class="fas fa-phone mr-2"></i> +212 614 664 093 / +212 641 945 704</span>
+                <span class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> Casablanca, Maroc</span>
+            </div>
+            <div>
+                <button onclick="toggleLanguage()" class="hover:text-brand-accent transition font-semibold focus:outline-none">
+                    <span class="fr-content"><i class="fas fa-globe mr-1"></i> العربية</span>
+                    <span class="ar-content"><i class="fas fa-globe ml-1"></i> Français</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="flex-shrink-0 flex items-center">
+                    <span class="font-extrabold text-xl md:text-2xl text-brand tracking-tight">DUROPAVITALIA <span class="text-xs font-semibold px-2 py-0.5 bg-brand-light text-brand rounded ml-1">SARL</span></span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex space-x-8 items-center text-sm font-semibold">
+                    <a href="#accueil" class="nav-link text-gray-700 hover:text-brand transition">
+                        <span class="fr-content">Accueil</span>
+                        <span class="ar-content">الرئيسية</span>
+                    </a>
+                    <a href="#a-propos" class="nav-link text-gray-700 hover:text-brand transition">
+                        <span class="fr-content">À Propos</span>
+                        <span class="ar-content">من نحن</span>
+                    </a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-brand transition">
+                        <span class="fr-content">Nos Services</span>
+                        <span class="ar-content">خدماتنا</span>
+                    </a>
+                    <a href="#realisations" class="nav-link text-gray-700 hover:text-brand transition">
+                        <span class="fr-content">Réalisations</span>
+                        <span class="ar-content">إنجازاتنا</span>
+                    </a>
+                    <a href="#contact" class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-md transition shadow-md">
+                        <span class="fr-content">Demander un Devis</span>
+                        <span class="ar-content">طلب عرض سعر</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button & Lang Toggle -->
+                <div class="flex items-center lg:hidden space-x-4">
+                    <button onclick="toggleLanguage()" class="text-sm font-semibold text-gray-600 focus:outline-none">
+                        <span class="fr-content">AR</span>
+                        <span class="ar-content">FR</span>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-brand focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#accueil" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50">
+                    <span class="fr-content">Accueil</span><span class="ar-content">الرئيسية</span>
+                </a>
+                <a href="#a-propos" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50">
+                    <span class="fr-content">À Propos</span><span class="ar-content">من نحن</span>
+                </a>
+                <a href="#services" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50">
+                    <span class="fr-content">Nos Services</span><span class="ar-content">خدماتنا</span>
+                </a>
+                <a href="#realisations" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50">
+                    <span class="fr-content">Réalisations</span><span class="ar-content">إنجازاتنا</span>
+                </a>
+                <a href="#contact" class="mobile-link mt-4 block w-full text-center px-4 py-3 rounded-md shadow bg-brand text-white font-medium hover:bg-brand-dark">
+                    <span class="fr-content">Demander un Devis</span><span class="ar-content">طلب عرض سعر</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative bg-hero-pattern bg-cover bg-center bg-no-repeat h-[80vh] min-h-[600px] flex items-center">
+        <div class="container mx-auto px-4 lg:px-6 relative z-10">
+            <div class="max-w-3xl" data-aos="fade-up" data-aos-duration="1000">
+                <div class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border border-white/30">
+                    <span class="fr-content"><i class="fas fa-star text-yellow-400 mr-2"></i> Excellence en revêtement</span>
+                    <span class="ar-content"><i class="fas fa-star text-yellow-400 ml-2"></i> التميز في الطلاء</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                    <span class="fr-content">L'Expertise au Service de vos <span class="text-brand-accent">Sols Industriels</span></span>
+                    <span class="ar-content">الخبرة في خدمة <span class="text-brand-accent">أرضياتكم الصناعية</span></span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl leading-relaxed">
+                    <span class="fr-content">DUROPAVITALIA SARL vous accompagne dans la conception et la réalisation de sols hautes performances : béton imprimé, résines époxy, et solutions d'étanchéité.</span>
+                    <span class="ar-content">دوروبافيطاليا ترافقكم في تصميم وإنجاز أرضيات عالية الأداء: الخرسانة المطبوعة، راتنجات الإيبوكسي، وحلول العزل المائي.</span>
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#services" class="bg-brand text-white px-8 py-4 rounded-md font-bold text-center hover:bg-white hover:text-brand transition duration-300 border-2 border-transparent hover:border-brand shadow-lg flex items-center justify-center">
+                        <span class="fr-content">Découvrir nos Services</span>
+                        <span class="ar-content">اكتشف خدماتنا</span>
+                        <i class="fas fa-arrow-right ml-2 inline-fr"></i>
+                        <i class="fas fa-arrow-left mr-2 inline-ar"></i>
+                    </a>
+                    <a href="#contact" class="bg-transparent text-white px-8 py-4 rounded-md font-bold text-center border-2 border-white hover:bg-white hover:text-brand-dark transition duration-300 flex items-center justify-center">
+                        <span class="fr-content">Nous Contacter</span>
+                        <span class="ar-content">اتصل بنا</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10" style="transform: rotate(180deg);">
+            <svg class="relative block w-full h-[50px] md:h-[80px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-neutral-50"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="a-propos" class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2 relative" data-aos="fade-right">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-brand-light rounded-lg -z-10"></div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 border-4 border-brand-accent/20 rounded-lg -z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=800&auto=format&fit=crop" alt="Chantier industriel DUROPAVITALIA" class="rounded-xl shadow-2xl w-full object-cover h-[400px]">
+                </div>
+                <div class="w-full lg:w-1/2" data-aos="fade-left">
+                    <span class="text-brand font-bold text-sm tracking-widest uppercase mb-2 block">
+                        <span class="fr-content">À Propos de Nous</span>
+                        <span class="ar-content">من نحن</span>
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-neutral-900 mb-6">
+                        <span class="fr-content">Votre partenaire de confiance pour des sols industriels durables</span>
+                        <span class="ar-content">شريكك الموثوق لأرضيات صناعية متينة وعالية الجودة</span>
+                    </h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        <span class="fr-content">Basée à Casablanca, <strong>DUROPAVITALIA SARL</strong> met son expertise technique et son savoir-faire de pointe au service des professionnels de l'industrie, du commerce et du bâtiment. Nous garantissons des revêtements résistants, esthétiques et conformes aux normes de sécurité les plus strictes.</span>
+                        <span class="ar-content">تتخذ شركة <strong>دوروبافيطاليا</strong> من مدينة الدار البيضاء مقراً لها، وتضع خبرتها التقنية ومعرفتها المتقدمة في خدمة المهنيين في قطاع الصناعة والتجارة والبناء. نضمن لكم أرضيات مقاومة، ذات جمالية عالية، ومطابقة لأرام المعايير الأمنية والسلامة.</span>
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="border-l-4 border-brand pl-4">
+                            <h3 class="font-bold text-2xl text-brand mb-1">+15</h3>
+                            <p class="text-sm text-gray-600"><span class="fr-content">Ans d'expérience</span><span class="ar-content">سنة من الخبرة</span></p>
+                        </div>
+                        <div class="border-l-4 border-brand pl-4">
+                            <h3 class="font-bold text-2xl text-brand mb-1">+200</h3>
+                            <p class="text-sm text-gray-600"><span class="fr-content">Projets réalisés</span><span class="ar-content">مشروع منجز</span></p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center text-brand font-bold hover:text-brand-dark transition">
+                        <span class="fr-content">En savoir plus sur nos engagements</span><span class="ar-content">اعرف المزيد عن التزاماتنا</span>
+                        <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-brand font-bold text-sm tracking-widest uppercase mb-2 block"><span class="fr-content">Nos Domaines d'Expertise</span><span class="ar-content">خدماتنا المتميزة</span></span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-neutral-900 mb-4"><span class="fr-content">Solutions Complètes pour Sols & Étanchéité</span><span class="ar-content">حلول متكاملة للأرضيات والعزل المائي</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-neutral-50 rounded-xl p-8 border border-neutral-100 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-light text-brand rounded-lg flex items-center justify-center text-2xl mb-6"><i class="fas fa-industry"></i></div>
+                    <h3 class="text-xl font-bold text-neutral-900 mb-3"><span class="fr-content">Sols Industriels</span><span class="ar-content">الأرضيات الصناعية</span></h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4"><span class="fr-content">Surfaces en béton armé, dallages industriels haute résistance pour entrepôts, usines et parkings.</span><span class="ar-content">أسطح من الخرسانة المسلحة، وبلاط صناعي عالي المقاومة للمستودعات والمصانع.</span></p>
+                </div>
+                <div class="service-card bg-neutral-50 rounded-xl p-8 border border-neutral-100 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-brand-light text-brand rounded-lg flex items-center justify-center text-2xl mb-6"><i class="fas fa-palette"></i></div>
+                    <h3 class="text-xl font-bold text-neutral-900 mb-3"><span class="fr-content">Béton Décoratif & Imprimé</span><span class="ar-content">الخرسانة الديكورية والمطبوعة</span></h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4"><span class="fr-content">Esthétique et robustesse alliées pour vos allées, terrasses et espaces extérieurs.</span><span class="ar-content">تجميع بين الجمالية والصلابة للممرات والساحات الخارجية.</span></p>
+                </div>
+                <div class="service-card bg-neutral-50 rounded-xl p-8 border border-neutral-100 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-brand-light text-brand rounded-lg flex items-center justify-center text-2xl mb-6"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="text-xl font-bold text-neutral-900 mb-3"><span class="fr-content">Résine Époxy & Polyuréthane</span><span class="ar-content">راتنجات الإيبوكسي والبولي يوريثان</span></h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4"><span class="fr-content">Revêtements sans joints, hygiéniques et résistants aux produits chimiques.</span><span class="ar-content">طلاء بدون فاصل، صحي ومقاوم للمواد الكيميائية.</span></p>
+                </div>
+                <div class="service-card bg-neutral-50 rounded-xl p-8 border border-neutral-100 shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-brand-light text-brand rounded-lg flex items-center justify-center text-2xl mb-6"><i class="fas fa-tint"></i></div>
+                    <h3 class="text-xl font-bold text-neutral-900 mb-3"><span class="fr-content">Étanchéité & Isolation</span><span class="ar-content">العزل المائي والحراري</span></h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4"><span class="fr-content">Protection complète contre les infiltrations d'eau pour toitures et fondations.</span><span class="ar-content">حماية كاملة ضد تسرب المياه للأسطح والأساسات.</span></p>
+                </div>
+                <div class="service-card bg-neutral-50 rounded-xl p-8 border border-neutral-100 shadow-sm" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 bg-brand-light text-brand rounded-lg flex items-center justify-center text-2xl mb-6"><i class="fas fa-tools"></i></div>
+                    <h3 class="text-xl font-bold text-neutral-900 mb-3"><span class="fr-content">Traitement & Ponçage de Sols</span><span class="ar-content">معالجة وتلميع الأرضيات</span></h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4"><span class="fr-content">Rénovation, ponçage, bouchage des pores et application de durcisseurs.</span><span class="ar-content">تجديد، صنفرة، معالجة المسام وتطبيق مواد مقوية للأسطح.</span></p>
+                </div>
+                <div class="service-card bg-neutral-50 rounded-xl p-8 border border-neutral-100 shadow-sm" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-14 h-14 bg-brand-light text-brand rounded-lg flex items-center justify-center text-2xl mb-6"><i class="fas fa-building"></i></div>
+                    <h3 class="text-xl font-bold text-neutral-900 mb-3"><span class="fr-content">Génie Civil & Construction</span><span class="ar-content">الهندسة المدنية والبناء</span></h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4"><span class="fr-content">Accompagnement global dans vos projets de construction et d'aménagement.</span><span class="ar-content">مواكبة شاملة في مشاريع البناء وتجهيز الهياكل.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Realisations Section -->
+    <section id="realisations" class="py-20 bg-neutral-50">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-brand font-bold text-sm tracking-widest uppercase mb-2 block"><span class="fr-content">Nos Réalisations</span><span class="ar-content">معرض أعمالنا</span></span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-neutral-900 mb-4"><span class="fr-content">Projets Récents</span><span class="ar-content">مشاريع حديثة</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f86f6?q=80&w=800&auto=format&fit=crop" alt="Sol Industriel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute bottom-4 left-4 text-white text-xs font-semibold px-3 py-1 bg-brand rounded-full">Casablanca</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-neutral-900 mb-2"><span class="fr-content">Dallage Industriel - Usine</span><span class="ar-content">بلاط صناعي - مصنع</span></h3>
+                        <p class="text-gray-600 text-sm"><span class="fr-content">Réalisation d'un sol en béton armé haute résistance de 5000m².</span><span class="ar-content">إنجاز أرضية من الخرسانة المسلحة بمساحة 5000م².</span></p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-md group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop" alt="Résine Époxy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute bottom-4 left-4 text-white text-xs font-semibold px-3 py-1 bg-brand rounded-full">Rabat</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-neutral-900 mb-2"><span class="fr-content">Résine Époxy - Showroom</span><span class="ar-content">راتنجات الإيبوكسي - معرض</span></h3>
+                        <p class="text-gray-600 text-sm"><span class="fr-content">Application d'une résine époxy décorative brillante autolissante.</span><span class="ar-content">تطبيق طلاء الإيبوكسي الديكوري اللامع.</span></p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-md group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?q=80&w=800&auto=format&fit=crop" alt="Béton Imprimé" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute bottom-4 left-4 text-white text-xs font-semibold px-3 py-1 bg-brand rounded-full">Marrakech</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-neutral-900 mb-2"><span class="fr-content">Béton Imprimé - Résidence</span><span class="ar-content">الخرسانة المطبوعة - مجمع سكني</span></h3>
+                        <p class="text-gray-600 text-sm"><span class="fr-content">Aménagement des allées extérieures en béton imprimé aspect pavé.</span><span class="ar-content">تهيئة الممرات الخارجية بالخرسانة المطبوعة.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-contact-pattern bg-cover bg-center relative">
+        <div class="absolute inset-0 bg-neutral-900/80"></div>
+        <div class="container mx-auto px-4 lg:px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white" data-aos="fade-right">
+                    <span class="text-brand-accent font-bold text-sm tracking-widest uppercase mb-2 block"><span class="fr-content">Contactez-Nous</span><span class="ar-content">اتصل بنا</span></span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-6"><span class="fr-content">Prêt à démarrer votre projet ? Discutons-en !</span><span class="ar-content">مستعد لبدء مشروعك؟ دعنا نتحدث!</span></h2>
+                    <p class="text-gray-300 mb-8 leading-relaxed"><span class="fr-content">Notre équipe est à votre disposition pour étudier vos besoins et vous fournir un devis détaillé.</span><span class="ar-content">فريقنا رهن إشارتكم لدراسة احتياجاتكم وتزويدكم بعرض سعر مفصل.</span></p>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-brand/20 text-brand-accent rounded-lg flex items-center justify-center text-xl flex-shrink-0"><i class="fas fa-map-marker-alt"></i></div>
+                            <div><h4 class="font-bold text-white mb-1"><span class="fr-content">Adresse</span><span class="ar-content">العنوان</span></h4><p class="text-gray-300 text-sm">Casablanca, Maroc</p></div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-brand/20 text-brand-accent rounded-lg flex items-center justify-center text-xl flex-shrink-0"><i class="fas fa-phone"></i></div>
+                            <div><h4 class="font-bold text-white mb-1"><span class="fr-content">Téléphone</span><span class="ar-content">الهاتف</span></h4><p class="text-gray-300 text-sm">+212 614 664 093 / +212 641 945 704</p></div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-brand/20 text-brand-accent rounded-lg flex items-center justify-center text-xl flex-shrink-0"><i class="fas fa-envelope"></i></div>
+                            <div><h4 class="font-bold text-white mb-1"><span class="fr-content">Email</span><span class="ar-content">البريد الإلكتروني</span></h4><p class="text-gray-300 text-sm">duropavitalia@hotmail.fr</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-10" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-neutral-900 mb-6"><span class="fr-content">Demande de Devis Gratuit</span><span class="ar-content">طلب عرض سعر مجاني</span></h3>
+                    <form onsubmit="handleSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1"><span class="fr-content">Nom complet</span><span class="ar-content">الاسم الكامل</span></label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand focus:outline-none transition">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1"><span class="fr-content">Téléphone</span><span class="ar-content">الهاتف</span></label>
+                                <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand focus:outline-none transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1"><span class="fr-content">Email</span><span class="ar-content">البريد الإلكتروني</span></label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand focus:outline-none transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1"><span class="fr-content">Service souhaité</span><span class="ar-content">الخدمة المطلوبة</span></label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand focus:outline-none transition">
+                                <option>Sol Industriel</option>
+                                <option>Béton Décoratif & Imprimé</option>
+                                <option>Résine Époxy</option>
+                                <option>Étanchéité</option>
+                                <option>Autre / Conseil</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1"><span class="fr-content">Message</span><span class="ar-content">الرسالة</span></label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand focus:outline-none transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand hover:bg-brand-dark text-white font-bold py-4 rounded-lg transition shadow-lg"><span class="fr-content">Envoyer la Demande</span><span class="ar-content">إرسال الطلب</span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-gray-400 py-12 border-t border-neutral-800">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div>
+                    <span class="text-white font-extrabold text-2xl tracking-tight">DUROPAVITALIA <span class="text-brand-accent">SARL</span></span>
+                    <p class="text-sm text-gray-400 mt-1"><span class="fr-content">Expert en revêtements de sol industriels et étanchéité au Maroc.</span><span class="ar-content">خبير في أرضيات الطلاء الصناعي والعزل المائي بالمغرب.</span></p>
+                </div>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="w-10 h-10 bg-neutral-800 hover:bg-brand text-white rounded-full flex items-center justify-center transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-neutral-800 hover:bg-brand text-white rounded-full flex items-center justify-center transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="w-10 h-10 bg-neutral-800 hover:bg-brand text-white rounded-full flex items-center justify-center transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-neutral-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm">
+                <p>&copy; 2026 DUROPAVITALIA SARL. <span class="fr-content">Tous droits réservés.</span><span class="ar-content">جميع الحقوق محفوظة.</span></p>
+                <p class="mt-2 sm:mt-0 text-gray-500">Casablanca, Maroc</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS Link -->
+    <script src="js/main.js"></script>
+</body>
+</html>
